@@ -1,3 +1,5 @@
+package model;
+
 /**
  * The {@code Card} record represents a playing card. All cards have a suit and rank.
  */
