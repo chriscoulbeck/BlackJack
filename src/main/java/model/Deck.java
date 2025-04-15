@@ -38,10 +38,7 @@ public class Deck {
         List<String> suits = List.of("Hearts", "Diamonds", "Clubs", "Spades");
         List<String> ranks = List.of("Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King");
 
-        return suits.stream()
-                .flatMap(suit -> ranks.stream()
-                        .map(rank -> new Card(suit, rank)))
-                .collect(Collectors.toCollection(Stack::new));
+        return suits.stream().flatMap(suit -> ranks.stream().map(rank -> new Card(suit, rank))).collect(Collectors.toCollection(Stack::new));
     }
 
     /**
@@ -61,5 +58,18 @@ public class Deck {
      */
     public Stack<Card> getCards() {
         return cards;
+    }
+
+    /**
+     * Draws a card from the deck.
+     * If the deck is empty, returns null.
+     *
+     * @return the card drawn from the deck, or null if the deck is empty
+     */
+    public Card drawCard() {
+        if (cards.isEmpty()) {
+            return null;
+        }
+        return cards.pop();
     }
 }
