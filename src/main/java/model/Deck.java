@@ -52,14 +52,6 @@ public class Deck {
         Collections.shuffle(cards);
     }
 
-    /**
-     * Retrieves the stack of cards in the deck.
-     *
-     * @return a {@link Stack} containing the cards in the deck.
-     */
-    public Stack<Card> getCards() {
-        return cards;
-    }
 
     /**
      * Draws a card from the deck.
