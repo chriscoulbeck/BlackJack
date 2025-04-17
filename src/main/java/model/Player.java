@@ -1,12 +1,15 @@
 package model;
 
+import java.util.List;
+
 /**
- * The Player class represents a player in the game with a balance and the ability to place bets.
- * This class tracks the players balance, and provides methods to validate bets, and to deduct the bet
+ * The Player class represents a player in the game with a balance, card hand, and the ability to place bets.
+ * This class tracks the players balance, their card hand, and provides methods to validate bets, and to deduct the bet
  * amount from their balance.
  */
 public class Player {
     private int balance;
+    List<Card> hand;
 
     /**
      * Constructs a new Player with the given balance.
@@ -24,6 +27,24 @@ public class Player {
      */
     public int getBalance() {
         return balance;
+    }
+
+    /**
+     * Retrieves the current hand of the player.
+     *
+     * @return the player's current hand
+     */
+    public List<Card> getHand() {
+        return hand;
+    }
+
+    /**
+     * Sets the current hand of the player.
+     *
+     * @param hand the player's new hand
+     */
+    public void setHand(List<Card> hand) {
+        this.hand = hand;
     }
 
     /**
