@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
@@ -71,5 +72,25 @@ public class Deck {
             return null;
         }
         return cards.pop();
+    }
+
+    /**
+     * Deals a specified number of cards from the deck.
+     *
+     * @param numberOfCards the number of cards to deal; must be greater than zero
+     * @return a list containing the dealt {@code Card} objects
+     * @throws IllegalArgumentException if {@code numberOfCards} is less than or equal to zero
+     */
+    public List<Card> dealCards(int numberOfCards) {
+        if (numberOfCards <= 0) {
+            throw new IllegalArgumentException("Number of cards must be greater than zero.");
+        }
+
+        List<Card> cards = new ArrayList<>();
+        for (int i = 0; i < numberOfCards; i++) {
+            cards.add(drawCard());
+        }
+
+        return cards;
     }
 }
