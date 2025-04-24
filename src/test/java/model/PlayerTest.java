@@ -43,4 +43,19 @@ public class PlayerTest {
         assertThrows(IllegalStateException.class, () -> player.placeBet(201));
         assertEquals(initialBalance, player.getBalance());
     }
+
+    @Test
+    void receiveCard_null_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> player.receiveCard(null));
+    }
+
+    @Test
+    void receiveCard_validCard_addCardToHand() {
+        Card validCard = new Card("Ace", "Clubs");
+        player.receiveCard(validCard);
+
+        assertEquals(1, player.getHand().size());
+        assertEquals("Ace", player.getHand().getFirst().rank());
+        assertEquals("Clubs", player.getHand().getFirst().suit());
+    }
 }
