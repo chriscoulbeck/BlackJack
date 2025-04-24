@@ -46,4 +46,22 @@ public class Deck {
         }
         return cards.pop();
     }
+
+    /**
+     * Returns the number of cards remaining in the deck.
+     *
+     * @return the number of cards in the deck
+     */
+    public int size() {
+        return cards.size();
+    }
+
+    /**
+     * Checks whether the deck contains any cards.
+     *
+     * @return {@code true} if there are no cards, {@code false} otherwise
+     */
+    public boolean isEmpty() {
+        return cards.isEmpty();
+    }
 }
